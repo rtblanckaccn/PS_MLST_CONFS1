@@ -1,8 +1,8 @@
 { "application": "i2d.ps.milestone.confirm.s1",
-  "version": "7.0.1",
-  "buildNumber": "4",
-  "buildId": "4",
+  "version": "7.0.2",
+  "buildNumber": "19",
+  "buildId": "19",
   "branch": "detached",
-  "revision": "1b07275dc41c5c9421c516aaa8bf0c9f5ef3f971",
+  "revision": "ae4cbcb884a9fea675eee00ec1a12b21d831afad",
   "GitURL": ""
 }
