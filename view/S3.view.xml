@@ -1,0 +1,65 @@
+<!--
+
+    Copyright (C) 2009-2019 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:me="sap.me"
+	xmlns:viz="sap.viz.ui5"  xmlns:form="sap.ui.layout.form"
+	 xmlns:ui="sap.ca.ui"
+
+	controllerName="i2d.ps.milestone.confirm.s1.view.S3">
+	<Page id="page2">
+		<content>
+			<ObjectHeader id="detail_list" title="" number=""
+				numberUnit="">
+
+				<attributes>
+					<ObjectAttribute id="DetailATTR1" text="">
+
+					</ObjectAttribute>
+					<ObjectAttribute title="{i18n>PROJ}" text="{Project}" />
+				</attributes>
+				<statuses>
+					<ObjectStatus id="milestoneType_detail"></ObjectStatus>
+
+				</statuses>
+			</ObjectHeader>
+	
+
+		<form:SimpleForm id="INFO_FORM" maxContainerCols="2" editable="true" class="form">
+                     <form:content> 
+                       <Label text="{i18n>DETAIL_PROJ_DESC}" />
+                           <Text text="{ProjectDescription}" />
+                           <Label text="{i18n>DETAIL_USAGE_DESC}"/>
+                           <Text text="{UsageCodeName}" />
+ 
+                           <Label id="change1" />
+                           <Text id="change1T" text="{parts:[{path : 'WBSElement'},{path :'ProjectNetwork'},{path :'NetworkActivity'}], formatter : '.WBS_ACT'}" />
+                           <Label id="change2"/>
+                           <Text id="change2T" text="{parts:[{path : 'WBSDescription'},{path :'ActivityDescription'}], formatter : '.WBS_DESC'}" />
+                           <Label  text="{i18n>DETAIL_PERC_OF_COMPLETION_NEW}" /> 
+                           <ProgressIndicator id="CompletionPercent" height="2.4rem" displayValue="" percentValue=""></ProgressIndicator> 
+                           <Label  text="{i18n>DETAIL_INVOICE_PERCENT}" /> 
+                           <ProgressIndicator id="InvoicePercent" height="2.4rem" displayValue="" percentValue=""></ProgressIndicator>
+                           
+                           <Label  text="{i18n>DETAIL_USAGE_INDICATOR}" class="spclabel"/>
+                           <Text id="usage" text="{parts:[{path : 'MlstnIsRelevantForPrgrsAnlys'},{path :'MlstnIsRelevantForDtelnSlsDoc'},{path :'MlstnIsRelevantForTrendAnlys'},{path : 'MlstnIsUsedforMlstnFunc'}],
+                          formatter : '.Usageformat'}" />
+                          
+                           <Label  text="{i18n>DETAIL_BASIC_SCHEDULED_DATE}" />
+                           <Text id="basic" text="{path:'ScheduledBasicDate', type:'sap.ui.model.type.Date' , formatOptions: {
+					style: 'short'
+				}}" />
+                            <!--  <Text id="basic" text="{path:'ScheduledBasicDate', type:'sap.ui.model.type.Date',formatOptions: {style: 'short',source: {pattern: 'dd.MM.yyyy'}}}" /> -->
+                           <Label  text="{i18n>DETAIL_ACT_MILESTONE_DATE}" required="true" />
+                           <DatePicker  id="actualDate" class="datePickerHeight" displayFormat="short"  valueFormat="dd/mm/yy" 
+                           change="ActualDateChangeView" /> 
+                     </form:content>
+              </form:SimpleForm>
+          <!--   Extension point foe detail page content.  -->
+		<core:ExtensionPoint name="extDetailContent"></core:ExtensionPoint> 
+		
+	</content>
+
+	</Page>
+</core:View>

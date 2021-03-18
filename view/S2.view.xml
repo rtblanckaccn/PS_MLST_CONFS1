@@ -1,0 +1,30 @@
+<!--
+
+    Copyright (C) 2009-2019 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m"
+       controllerName="i2d.ps.milestone.confirm.s1.view.S2">
+       <Page id="page" title="{i18n>MASTER_TITLE_NEW}">
+              
+
+              <content>
+                     <List id="list"  growing="true" growingScrollToLoad="true"
+                           growingThreshold="20" enableBusyIndicator="false"
+                           items="{path:'/MilestoneDetailSet'}" 
+                           select="_handleSelect" mode="SingleSelectMaster">
+                           <ObjectListItem id="MAIN_LIST_ITEM" press="_handleItemPress"
+                                  type="{device>/listItemType}" title="" number="" numberUnit="">
+                                  <attributes>
+                                         <ObjectAttribute id="ATTR1" text="" />
+                                         <ObjectAttribute id="ATTR2" title="{i18n>PROJ}" text="{Project}" />
+                                  </attributes>
+                                  <firstStatus>
+                                         <ObjectStatus id="milestoneType"></ObjectStatus>
+                                  </firstStatus>
+                           </ObjectListItem>
+                     </List>
+              </content>
+              
+       </Page>
+</core:View>

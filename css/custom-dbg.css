@@ -1,0 +1,18 @@
+.fioriMessageContentPadding {
+       padding: 15px !important;
+       text-allign: center !important;
+}
+.spclabel{
+       margin-top: 10% !important;
+}
+.datePickerHeight input{
+       height: 2.4rem !important;
+}
+
+.form{
+       margin: 2% !important;
+       width : 96% !important;
+}
+.use{
+	margin-top: 3%;
+}
